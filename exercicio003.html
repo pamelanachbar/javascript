@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(255, 192, 203);
+            font-size: 1.3em;
+        }
+        h1{
+            color: crimson;
+        }
+        /**/
+
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1> <!-- -->
+    <p>Já me livrei da maldição!</p>
+    <script>
+        /*
+        Maneiras de Converter uma String para um número
+        Number.parseNumber(n)
+        Number.parseFloat(n)
+        Number(n) - A forma que eu usei, o próprio vscode identifica o tipo e soma
+        Maneiras de Converter de um número para um String
+        String(n)
+        n.toString()
+        */
+        var n1, n2;
+       alert('Digite dois números: ');
+       n1 = Number( prompt('Número 1: ')); //o comando prompt retorna uma string, temos que converter
+       n2 = Number(prompt('Número 2: '));
+      
+       // (number + number ) adição
+       // (string + string) concatenação
+       var soma = n1 + n2;
+       alert(`A soma de ${n1} mais ${n2} é ${soma}`);
+       //alert('A soma entre eles é: ' + String(soma));
+       //alert('A soma entre eles é: ' + soma.toString());
+       //alert('Os números escolhidos foram: ' + n1 + ' e ' + n2 + '!');
+
+
+       
+    </script>
+</body>
+</html>
