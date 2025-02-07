@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando DOM</title>
+    <style>
+        body{
+            background: blueviolet;
+            color: white;
+            font: normal 1.5em Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 name="titulo">Estudando DOM</h1>
+    <p>Aqui está o resultado</p>
+    <p>Aprender a usar o <strong>DOM</strong> em JavaScript</p>
+    <p>Bem vindo!!</p>
+
+    <div class="botao">Botão</div>
+    <div class="botao">Botão</div>
+    <div id="msg">Clique em mim</div>
+
+    
+    <script>
+        /*
+       window.document.body
+       window.document.write('Olá, mundo')
+       window.document.write(window.document.charset)
+       window.document.write(window.navigator.appName)
+       window.document.write(window.document.location)
+       var p1 = window.document.getElementsByTagName('p')[1]
+       document.write(p1.innerHTML)
+        window.alert(p1.innerText)
+        Inner text são coloca as configuração filhas, e o innerHTML coloca todas 
+         d.innerText = 'Estou aguardadando...'
+
+       var corpo = window.document.body
+       var p1 = window.document.getElementsByTagName('p')[0]
+      
+        window.document.write('Esta escrito assim: ' + p1.innerText)
+        p1.style.color = 'blue'
+        corpo.style.background = 'black'
+        
+        var d = window.document.getElementById('msg')
+        d.style.background = 'darkblue'
+      
+       window.document.getElementById('msg').innerText = 'olá'*/
+
+
+       window.document.write('Testando o DOM do JavaScript!! <br>') 
+       var mensagem = window.document.getElementById("msg")
+       document.write(mensagem.innerHTML)
+        mensagem.style.color = 'black'
+        mensagem.style.fontFamily =  ('Verdana')
+        mensagem.style.backgroundColor = ('pink')
+        mensagem.style.borderRadius = ('10px')
+        
+        corpo = window.document.body
+        corpo.style.background = ('black')
+
+        texto = window.document.getElementsByTagName('p') [2]
+       // window.alert(texto.innerHTML)
+
+        h1 = window.document.getElementsByName('titulo') [0]
+        document.write(h1.innerHTML)
+
+        botoes = window.document.getElementsByClassName('botao') [0]
+        document.write(botoes.innerHTML)
+
+        msg = window.document.querySelector('div#msg') 
+        msg.style.backgroundColor = 'blue'
+
+        botao = window.document.querySelector('div.botao')
+        botao.style.backgroundColor = 'pink'
+        botao.innerHTML = 'AAAAAAAA'
+
+    </script>
+</body>
+</html>
