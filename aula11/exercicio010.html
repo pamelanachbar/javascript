@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições em JavaScript</title>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+       <label for="ivelocidade">Velocidade: </label>
+       <input type="number" name="velocidade" id="ivelocidade">
+       <input type="button" value="Enviar" onclick="clicar(event)">
+       <div></div>
+    </form>
+
+    <script>
+        function clicar(event){
+            event.preventDefault();
+            velocidade = document.querySelector('input#ivelocidade')
+            velocidadeCarro = Number((velocidade.value))
+            texto = document.querySelector('div')
+            texto.innerHTML = `<p>Sua velocidade atual é de ${velocidadeCarro}<\p>`
+            if (velocidadeCarro > 60){
+                texto.innerHTML += '<p>Resultado: <strong>Multado!</strong><\p> '
+            }
+            else{
+                texto.innerHTML += '<p>Resultado: <strong>Não Multado</strong><\p>'
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+    <title>Condições em JavaScript</title>
+</head>
+<body>
+    <h1>
+        <p>Verificação de país</p>
+    </h1>
+    <form action="" method="get">
+        <label for="ipais">País que vive: </label>
+        <input type="text" name="pais" id="ipais">
+        <input type="submit" onclick="clicar(event)">
+        <div></div>
+    </form>
+    
+    <script>
+
+        function clicar(event){
+            event.preventDefault();
+           var  txtpais = document.getElementById('ipais')
+           var  resultado = document.querySelector('div')
+           var  resposta = (txtpais.value)
+
+           resultado.innerHTML = `<p>Seu pais é ${resposta}<\p>`
+           if (resposta == 'Brasil'){
+                resultado.innerHTML += `<p>Você é <strong>Brasileiro!<\strong><\p>`
+           }
+           else{
+            resultado.innerHTML += `<p>Você é <strong>estrageiro<\strong><\p>`
+           }
+        }
+    </script>
+</body>
+</html>
