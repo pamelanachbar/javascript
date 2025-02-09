@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotra do Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+
+    <main>
+        <div id="container">
+            <img src="" alt="" id="deManha">
+            <div id="texto"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i>@cursoemvideo</i></p>
+    </footer>
+
+    <script>
+
+        function carregar(){
+        var agora = new Date()
+        var hora = agora.getHours()
+       
+        texto = document.querySelector('div#texto')
+        imagem = document.querySelector('img')
+        cor = document.querySelector('body')
+        
+        texto.innerHTML = `Agora são ${hora} horas`
+
+        if(hora >=  0 && hora < 12){
+            imagem.src = 'imagemDeManha.jpg'
+            cor.style.backgroundColor = '#4196f1e5'
+        }
+
+        if(hora >= 12 && hora < 18){
+            imagem.src = 'imagemDeTarde.jpg'
+            cor.style.backgroundColor = 'lightsalmon'
+        }
+
+        if(hora >= 18){
+            imagem.src = 'imagemDeNoite.jpg'
+            cor.style.backgroundColor = 'darkslateblue'
+        }
+    }
+
+
+    </script>
+</body>
+</html>

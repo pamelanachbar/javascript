@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Verificador de idade</h1>
+
+    <form action="" method="get">
+        <main>
+            <div>
+                <label for="ianoNascimente">Ano de Nascimento:</label> 
+                        <input type="number" name="anoNascimente" id="ianoNascimento" placeholder="idade"> <br>
+                
+                        <label for="isexo">Sexo: </label> <br>
+                        <input type="radio" name="sexo" id="imasculino" value="masculino" > Masculino 
+                        <input type="radio" name="sexo" id="ifeminino"> Feminino <br>
+                
+                       <input type="submit" value="Verificar" onclick="verificar(event)" id="verificar"> <br>
+                
+                       <label for="">Prencha os dados acima para ver o resultado!</label> <br>
+                       <img src="" alt="">
+                      
+            </div>
+          
+        </main>
+
+        <script>
+            function verificar(event){
+                event.preventDefault();
+                var anoNascimento = document.getElementById('ianoNascimento')
+            var ano = Number((anoNascimento.value))
+            var idade = 2025 - ano
+            var imagem = document.querySelector('img')
+
+            if(idade >= 0 && idade < 12){
+                imagem.src = 'imagemCriancaMenina.jpg'
+            }
+            }
+            
+
+
+       /*<img src="imagemCriancaMenina.jpg" alt="">
+        <img src="imagemCriancaMenino.jpg" alt="">
+        <img src="imagemMulher.jpg" alt="">
+        <img src="imagemHomem (1).jpg" alt="">
+        <img src="imagemIdosa.jpg" alt="">
+        <img src="imagemIdoso.jpg" alt=""> */
+
+
+        </script>
+        
+       
+    </form>
+</body>
+</html>
