@@ -16,12 +16,29 @@
             font-size: 1.2em;
 
         }
+       body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2em;
+        margin-top: 20px;
+       }
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter = "entrar()" onmouseleave="sair()">
-        Interaja...
+    <div id="area" onclick="clicar()" onmouseenter = "entrar()" onmouseleave="sair()" ondblclick="duploClique()" onmouseover="passarMouse()">
+       <p>Interaja...</p>
     </div>
+
+    <form action="" method="get">
+        <label for="inome" >Nome: </label>
+        <input type="text" name="nome" id="inome" onmouseenter="entrarInput()" onmouseout="sairInput()" placeholder="nome" onkeydown="digitando()" onkeyup="soltou()">  <br>
+
+        <label for="iidade">Idade:</label>
+        <input type="number" name="idade" id="iidade" placeholder="idade" onfocus="foco()" onblur="perdaFoco()" oninput="digitar()" >
+
+        <label for="icomida">Comida Preferida: </label>
+        <input type="checkbox" name="comida" id="icomida" onchange="mudanca()">
+
+    </form>
     <script>
         //podia ter colocado uma variavel global para ser usada em todos os eventos
         function clicar(){
@@ -33,12 +50,64 @@
             area = document.getElementById('area')
             area.style.backgroundColor = 'pink'
            area.innerHTML = 'Entrou!'
+
+        } 
+
+        function entrarInput(){
+             form = document.querySelector('input#inome')
+           form.style.backgroundColor = 'lightgray'
+        }
+
+        function sairInput(){
+            form = document.querySelector('input#inome')
+            form.style.backgroundColor = 'white'
+        }
+
+        function digitando(){
+            digitar = document.querySelector('div#area')
+            digitar.innerHTML = 'Digitando...'
+        }
+
+        function soltou() {
+            soltar = document.querySelector('div#area')
+            soltar.innerHTML = 'Parou de Digitar...'
+        }
+
+        function foco(){
+            form = document.querySelectorAll('input') [1]
+            form.style.backgroundColor = 'lightblue'
+        }
+
+        function perdaFoco(){
+            perda = document.querySelectorAll('input') [1]
+            perda.style.backgroundColor = 'white'
+        }
+
+        function digitar(){
+            a = document.querySelectorAll('input') [1]
+            a.style.backgroundColor = 'white'
+        }
+        function mudanca(){
+           escrever = document.querySelector('div#area')
+           marcou = document.querySelectorAll('input') [2]
+           escrever.innerHTML = 'Check!'
         }
         function sair(){
             cor = document.getElementById('area')
             cor.style.backgroundColor = 'cornflowerblue'
             cor.innerHTML = 'Saiu!'
 
+        }
+        function duploClique(){
+            cor = document.querySelector('div#area')
+            cor.style.backgroundColor = 'red'
+            cor.innerHTML = 'Duplo Clique!'
+
+        }
+        function passarMouse(){
+            cor = document.querySelector('div#area')
+            cor.style.backgroundColor = 'green'
+            cor.innerHTML = 'Passou o mouse!!!'
         }
     </script>
 </body>
