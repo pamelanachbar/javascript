@@ -9,51 +9,99 @@
 <body>
     <h1>Verificador de idade</h1>
 
-    <form action="" method="get">
-        <main>
+    <main>
+        <form>
             <div>
-                <label for="ianoNascimente">Ano de Nascimento:</label> 
-                        <input type="number" name="anoNascimente" id="ianoNascimento" placeholder="idade"> <br>
+                <label for="ianoNascimento">Ano de Nascimento:</label> 
+                <input type="number" name="anoNascimento" id="ianoNascimento" placeholder="ano"> <br>
                 
-                        <label for="isexo">Sexo: </label> <br>
-                        <input type="radio" name="sexo" id="imasculino" value="masculino" > Masculino 
-                        <input type="radio" name="sexo" id="ifeminino"> Feminino <br>
+                <label>Sexo: </label> <br>
+                <input type="radio" name="sexo" id="imasculino"  checked> 
+                <label for="imasculino">Masculino</label> 
+                <input type="radio" name="sexo" id="ifeminino">
+                <label for="ifeminino">Feminino</label> <br>
                 
-                       <input type="submit" value="Verificar" onclick="verificar(event)" id="verificar"> <br>
+                <input type="button" value="Verificar" onclick="verificar()" id="iverificar"> <br>
                 
-                       <label for="">Prencha os dados acima para ver o resultado!</label> <br>
-                       <img src="" alt="">
-                      
+                <div id="resultado">
+                    <p>Preencha os dados acima para ver o resultado!</p>
+                </div>
+                   
+                    <div> <img src="" alt="" id="foto"></div>
+              
             </div>
-          
-        </main>
+        </form>
+    </main>
 
-        <script>
-            function verificar(event){
-                event.preventDefault();
-                var anoNascimento = document.getElementById('ianoNascimento')
-            var ano = Number((anoNascimento.value))
-            var idade = 2025 - ano
-            var imagem = document.querySelector('img')
+    <script>
+        function verificar() {
+            var data = new Date()
+            var ano = data.getFullYear()
 
-            if(idade >= 0 && idade < 12){
-                imagem.src = 'imagemCriancaMenina.jpg'
-            }
-            }
+            var anoUsuario = document.getElementById('ianoNascimento')
+            var resposta = document.getElementById('resultado')
+
+
+           
+
+            if(anoUsuario.value.length == 0 ||  anoUsuario.value > ano)
+        {
+            window.alert('[ERRO] Ano inválido!')
+        }
+            else {
+             var formSexo = document.getElementsByName('sexo')
+             var idade = ano - anoUsuario.value 
+             var genero = ''
+             
+
+             var expansao = document.querySelector('main')
+             var imagem = document.getElementById('foto')
+             
             
+             if(formSexo[0].checked){
+                 genero = 'Masculino'
+                 expansao.style.height = '560px'
+                 if (idade >= 0 && idade <= 12){
+                   
+                    imagem.src = 'imagemCriancaMenino.jpg'
+                 }
+                 else if(idade <= 50){
+                    
+                        imagem.src = 'imagemHomem.jpg'
+                 }
+                 else{
+                    
+                    imagem.src = 'imagemIdoso.jpg'
+                 }
 
+                 
+             }
+               
 
-       /*<img src="imagemCriancaMenina.jpg" alt="">
-        <img src="imagemCriancaMenino.jpg" alt="">
-        <img src="imagemMulher.jpg" alt="">
-        <img src="imagemHomem (1).jpg" alt="">
-        <img src="imagemIdosa.jpg" alt="">
-        <img src="imagemIdoso.jpg" alt=""> */
+            else if (formSexo[1].checked){
+                genero = 'Feminino'
+                expansao.style.height = '560px'
+                if (idade >= 0 && idade <= 12){
+                    imagem.src = 'imagemCriancaMenina.jpg'
+                 }
+                 else if(idade <= 50){
+                   
+                        imagem.src = 'imagemMulher.jpg'
+                 }
+                 else{
+                   
+                    imagem.src = 'imagemIdosa.jpg'
+                 }
 
+            }
+                
+                 
+        }
 
-        </script>
-        
-       
-    </form>
+            resposta.innerHTML = `Você tem ${idade} anos com o gênero ${genero}`   
+
+            
+    }
+    </script>
 </body>
 </html>

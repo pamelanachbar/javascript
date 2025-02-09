@@ -39,11 +39,11 @@ div{
     text-align: justify;
     line-height: 30px;
     margin-left: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
     padding-top: 30px;
 }
 
-#verificar{
+#iverificar{
     padding: 10px;
     border-radius: 7px;
     background-color: rgb(37, 14, 82);
@@ -59,7 +59,9 @@ div{
 }
 
 img{
+    display: block;
     border-radius: 100%;
     width: 200px;
     height: 200px;
+    margin: auto;
 }
