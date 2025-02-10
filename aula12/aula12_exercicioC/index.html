@@ -20,34 +20,64 @@
                 <p>-15 + 75 -33 -12</p>
             </label>
             <input type="number" name="expressaoUm" id="iexpressaoUm"> <br>
+            <div id="respostaUm"></div>
 
             <label for="iexpressaoDois">Questão 2
                 <p>-15.3-135+80+50</p>
             </label>
             <input type="number" name="expressaoDois" id="iexpressaoDois"> <br>
+            <div id="respostaDois"></div>
 
             <label for="iexpressaoTres">Questão 3
                 <p>87 + 7 . 85 - 120</p>
             </label>
             <input type="number" name="expressaoTres" id="iexpressaoTres"> <br>
+            <div id="respostaTres"></div>
 
             <label for="iexpressaoQuatro">Questão 4
                 <p> 25 + 6 2 : 12 - √169 + 42</p>
             </label>
             <input type="number" name="expressaoQuatro" id="iexpressaoQuatro"> <br>
+            <div id="respostaQuatro"></div>
 
             <label for="iexpressaoCinco">Questão 5
                 <p> 174 + 64 x 3 - 89</p>
             </label>
             <input type="number" name="expressaoCinco" id="iexpressaoCinco"> <br>
+            <div id="respostaCinco"></div>
 
             <div id="botoes">
                 <input type="reset" value="Limpar" id="limpar">
-                <input type="button" value="Enviar" id="enviar">
+                <input type="button" value="Enviar" id="ienviar" onclick="enviar()">
             </div>
-
-           
+            <div id="resposta"></div>
         </form>
+
+        <img src="" alt="">
     </main>
+
+    <script>
+        function enviar(){
+        var questaoUm = document.getElementById('iexpressaoUm')
+        var questaoDois = document.getElementById('iexpressaoDois') 
+        var questaoTres = document.getElementById('iexpressaoTres') 
+        var questaoQuatro = document.getElementById('iexpressaoQuatro') 
+        var questaoCinco = document.getElementById('iexpressaoCinco')
+
+        var respostaCertas = 0
+        if(questaoUm.value.length == 0 || questaoDois.value.length == 0 || questaoTres.value.length == 0 || questaoQuatro.value.length == 0 || questaoCinco.value.length == 0){
+            alert('Erro')
+        }
+        else{
+            if(questaoUm.value == 15){
+                respostaCertas++
+                rU = document.getElementById('respostaUm')
+                rU.innerHTML = 'Resposta correta!'
+
+            }
+           
+        }
+        }
+    </script>
 </body>
 </html>
