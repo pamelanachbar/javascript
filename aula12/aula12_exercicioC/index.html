@@ -181,7 +181,7 @@
                 rC = document.getElementById('respostaCinco')
                 rC.innerHTML = 'Resposta errada!'
                 rC.style.fontSize = '25px'
-                r.style.color = 'red'
+                rC.style.color = 'red'
 
                 b = document.getElementById('iexpressaoCinco')
                 b.style.border = '2px solid red'
@@ -189,11 +189,14 @@
             }
 
             var expansao = document.querySelector('main')
-            expansao.style.height = '1100px'
+            expansao.style.height = '1200px'
 
             var resultadoTotal  = document.getElementById('resposta')
             resultadoTotal.innerHTML = `RESULTADO: <br> Respostas certas: ${respostaCertas} <br> Respostas erradas: ${respostaErrada}`
             resultadoTotal.style.fontSize = '35px'
+            resultadoTotal.style.backgroundColor = '#090230'
+            resultadoTotal.style.color = 'white'
+            resultadoTotal.style.width = '500px'
         }
         }
     </script>
