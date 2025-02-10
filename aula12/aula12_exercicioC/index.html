@@ -46,11 +46,13 @@
             <input type="number" name="expressaoCinco" id="iexpressaoCinco"> <br>
             <div id="respostaCinco"></div>
 
+            <div id="resposta"></div>
+
             <div id="botoes">
                 <input type="reset" value="Limpar" id="limpar">
                 <input type="button" value="Enviar" id="ienviar" onclick="enviar()">
             </div>
-            <div id="resposta"></div>
+            
         </form>
 
         <img src="" alt="">
@@ -65,6 +67,7 @@
         var questaoCinco = document.getElementById('iexpressaoCinco')
 
         var respostaCertas = 0
+        var respostaErrada = 0
         if(questaoUm.value.length == 0 || questaoDois.value.length == 0 || questaoTres.value.length == 0 || questaoQuatro.value.length == 0 || questaoCinco.value.length == 0){
             alert('Erro')
         }
@@ -73,9 +76,124 @@
                 respostaCertas++
                 rU = document.getElementById('respostaUm')
                 rU.innerHTML = 'Resposta correta!'
+                rU.style.fontSize = '25px'
+                rU.style.color = 'green'
+
+                b = document.getElementById('iexpressaoUm')
+                b.style.border = '2px solid green'
 
             }
+            else{
+                respostaErrada++
+                rU = document.getElementById('respostaUm')
+                rU.innerHTML = 'Resposta errada!'
+                rU.style.fontSize = '25px'
+                rU.style.color = 'red'
+
+                b = document.getElementById('iexpressaoUm')
+                b.style.border = '2px solid red'
+
+            }
+
+            if(questaoDois.value == -165){
+                respostaCertas++
+                rD = document.getElementById('respostaDois')
+                rD.innerHTML = 'Resposta correta!'
+                rD.style.fontSize = '25px'
+                rD.style.color = 'green'
+
+                b = document.getElementById('iexpressaoDois')
+                b.style.border = '2px solid green'
+            }
+            else{
+                respostaErrada++
+                rD = document.getElementById('respostaDois')
+                rD.innerHTML = 'Resposta errada!'
+                rD.style.fontSize = '25px'
+                rD.style.color = 'red'
+
+                b = document.getElementById('iexpressaoDois')
+                b.style.border = '2px solid red'
+
+            }
+
+            if(questaoTres.value == 562){
+                respostaCertas++
+                rT = document.getElementById('respostaTres')
+                rT.innerHTML = 'Resposta correta!'
+                rT.style.fontSize = '25px'
+                rT.style.color = 'green'
+
+                b = document.getElementById('iexpressaoTres')
+                b.style.border = '2px solid green'
+            }
+
+            else{
+                respostaErrada++
+                rT = document.getElementById('respostaTres')
+                rT.innerHTML = 'Resposta errada!'
+                rT.style.fontSize = '25px'
+                rT.style.color = 'red'
+
+                b = document.getElementById('iexpressaoTres')
+                b.style.border = '2px solid red'
+
+            }
+
+
+            if(questaoQuatro.value == 57){
+                respostaCertas++
+                rQ = document.getElementById('respostaQuatro')
+                rQ.innerHTML = 'Resposta correta!'
+                rQ.style.fontSize = '25px'
+                rQ.style.color = 'green'
+
+                b = document.getElementById('iexpressaoQuatro')
+                b.style.border = '2px solid green'
+            }
+
+            else{
+                respostaErrada++
+                rQ = document.getElementById('respostaQuatro')
+                rQ.innerHTML = 'Resposta errada!'
+                rQ.style.fontSize = '25px'
+                rQ.style.color = 'red'
+
+                b = document.getElementById('iexpressaoQuatro')
+                b.style.border = '2px solid red'
+
+            }
+
            
+            if(questaoCinco.value == 277){
+                respostaCertas++
+                rC = document.getElementById('respostaCinco')
+                rC.innerHTML = 'Resposta correta!'
+                rC.style.fontSize = '25px'
+                rC.style.color = 'green'
+
+                b = document.getElementById('iexpressaoCinco')
+                b.style.border = '2px solid green'
+            }
+
+            else{
+                respostaErrada++
+                rC = document.getElementById('respostaCinco')
+                rC.innerHTML = 'Resposta errada!'
+                rC.style.fontSize = '25px'
+                r.style.color = 'red'
+
+                b = document.getElementById('iexpressaoCinco')
+                b.style.border = '2px solid red'
+
+            }
+
+            var expansao = document.querySelector('main')
+            expansao.style.height = '1100px'
+
+            var resultadoTotal  = document.getElementById('resposta')
+            resultadoTotal.innerHTML = `RESULTADO: <br> Respostas certas: ${respostaCertas} <br> Respostas erradas: ${respostaErrada}`
+            resultadoTotal.style.fontSize = '35px'
         }
         }
     </script>
