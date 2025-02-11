@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color:darkgray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabuada</h1>
+   <form method="get">
+    <label for="inumero">Número:</label>
+    <input type="number" name="numero" id="inumero">
+
+    <input type="button" value="Enviar" onclick="enviar()"> <br>
+    <select  id="ilista" size="10">
+        <option value="">Digite um número acima</option>
+    </select>
+   </form>
+    
+   <script>
+    function enviar(){
+        var numero1 = document.getElementById('inumero')
+        var lista = document.getElementById('ilista')
+        if(numero1.value.length == 0 || numero1.value < 0){
+            alert('Erro!')
+        }
+        else{
+            var n = Number(numero1.value)
+            lista.innerHTML = ''
+            for(var i = 0; i <= 10; i++){
+                var item = document.createElement('option') 
+                item.text = `${i} X ${n} = ${n * i}`
+                item.value = `tab${i}`
+                lista.appendChild(item)
+
+
+            }
+        }
+
+    }
+   </script>
+</body>
+</html>
