@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor em Real</title>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(248, 241, 241);
+        }
+        div{
+            display: block;
+            width: 270px;
+            padding: 20px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+
+        }
+        #resultado{
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculadora</h1>
+        <form method="get">
+            <label for="inumero1">Número 1: </label>
+            <input type="number" name="numero" id="inumero1"> <br><br>
+            <label for="inumero2">Número 2: </label>
+            <input type="number" name="numero" id="inumero2"> <br>
+            <p>Operações</p>
+            <input type="radio" name="op" id="soma"> <label for="soma">Soma</label> <br>
+            <input type="radio" name="op" id="subtracao"> <label for="subtracao">Subtração</label> <br>
+            <input type="radio" name="op" id="mult"> <label for="mult">Multiplicação</label> <br>
+            <input type="radio" name="op" id="divisao"> <label for="divisao">Divisão</label> <br><br>
+            <input type="button" value="Converter" onclick="calcular()">
+            <div id="resultado"></div>
+        </form>
+    </div>
+
+    <script>
+        function calcular(){
+            var n1 = document.getElementById('inumero1')
+            var n2 = document.getElementById('inumero2')
+            var r = document.getElementById('resultado')
+            if(n1.value.length == 0 || n2.value.length == 0){
+                alert('Digite um número!')
+            }
+            else{
+                var adicao = document.getElementById('soma')
+                var diferenca = document.getElementById('subtracao')
+                var produto = document.getElementById('mult')
+                var divisor = document.getElementById('divisao')
+
+                if(adicao.checked){
+                    var s = Number(n1.value) + Number(n2.value)
+                    r.innerHTML = `Resultado da Soma: ${s}`
+                }
+                if(diferenca.checked){
+                    var su = Number(n1.value) - Number(n2.value)
+                    r.innerHTML = `Resultado da Subtração: ${su}`
+                }
+                if(produto.checked){
+                    var m = Number(n1.value) * Number(n2.value)
+                    r.innerHTML = `Resultado da Multiplicação: ${m}`
+                }
+                if(divisor.checked){
+                    var d = Number(n1.value) / Number(n2.value)
+                    r.innerHTML = `Resultado da Divisão: ${d}`
+                }
+                    
+
+            }
+        }
+    </script>
+</body>
+</html>
