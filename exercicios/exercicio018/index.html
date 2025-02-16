@@ -4,14 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Números Par e Ímpar</title>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(237, 222, 218);
+        }
+        div{
+            background-color: white;
+            display: block;
+            margin: auto;
+            width: 350px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        #resultado{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
 </head>
 <body>
-    <form method="get">
-        <label for="inumero">Digite 5 números: </label> <br>
-       <label for="inumero1">Número 1: </label> <input type="number" name="numero" id="inumero1">
-        <label for="inumero2">Número 2: </label><input type="number" name="" id="inumero2">
-        
+    <div>
+        <h1>Ímpar ou Par em Lista</h1>
+        <form method="get">
+            <label for="inumero">Digite 3 números: </label> <br>
+           <label for="inumero1">Número 1: </label> <input type="number" name="numero1" id="inumero1"> <br>
+            <label for="inumero2">Número 2: </label><input type="number" name="numero2" id="inumero2"> <br>
+            <label for="inumero3">Número 3:</label> <input type="number" name="numero3" id="inumero3"> <br>
+            <input type="button" value="Verificar" onclick="v()">
+            <div id="resultado">
+            </div>
+        </form>
+    </div>
 
-    </form>
+    <script>
+        function v(n1, n2, n3){
+            var lN1 = document.getElementById('inumero1')
+            var lN2 = document.getElementById('inumero2')
+            var lN3 = document.getElementById('inumero3')
+
+            if(lN1.value.length == 0 || lN2.value.length == 0 || lN3.value.length == 0){
+                alert('Erro!')
+            }
+            else{
+                nN1 = Number(lN1.value)
+                nN2 = Number(lN2.value)
+                nN3 = Number(lN3.value)
+
+               parImpar(nN1, nN2, nN3)
+            }
+        }
+
+        function parImpar(pN1, pN2, pN3){
+            var r = document.getElementById('resultado')
+            var vetor = []
+            vetor.push(pN1)
+            vetor.push(pN2)
+            vetor.push(pN3)
+
+            for(var i = 0; i < 3; i++){
+                    if(vetor[i] % 2 == 0){
+                       r.innerHTML += `PAR - Posição [${i}] =  ${vetor[i]} </br>`
+                    }
+                    else{
+                        r.innerHTML += `ÍMPAR - Posição [${i}] = ${vetor[i]} </br>`
+                    }
+            }
+        }
+    </script>
 </body>
 </html>
