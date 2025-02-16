@@ -30,9 +30,27 @@
             <input type="number" name="inumero" id="inumero1"> <br>
             <label for="inumero2">Número 2: </label>
             <input type="number" name="inumero" id="inumero2"> <br>
-            <input type="button" value="Enviar"> <br>
+            <input type="button" value="Enviar" onclick="v()"> <br>
             <select name="r" id="ir" size="7"></select>
         </form>
     </div>
+
+    <script>
+        function v(){
+            var lN1 = document.getElementById('inumero1')
+        var lN2 = document.getElementById('inumero2')
+
+        if(lN1.value.length == 0 || lN2.value.length == 0){
+            alert('Erro!')
+        }
+        else{
+            nN1 = Number(lN1.value)
+            nN2 = Number(lN2.value)
+
+            var s = document.getElementById('ir')
+            s.text = nN2
+        }
+        }
+    </script>
 </body>
 </html>
