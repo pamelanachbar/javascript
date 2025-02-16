@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Uma instrução que é retorno
+        function subtracao(a , b){
+            return a - b;
+        }
+
+        var subtracaoArrow = (a, b) =>{
+            return a - b;
+        }
+
+        var sub = (a, b) => a - b 
+
+
+        //Um parâmetro na definição
+        function somarArrow(a){
+            return a + 2
+        }
+
+        var soma2Arrow = a => a + 2
+
+        //Sem parametros
+        function diaSemana(){
+            return new Date().getDate()
+        }
+
+        var diaSemana = () => new Date().getDate()
+
+        console.log(diaSemana())
+
+        //Super Funções 
+        function superFuncao(a, b){
+            var soma = a + b
+            var media = (a + b) / 2
+            return media
+        }
+
+        var superFuncaoArrrom = (a, b) =>{
+            var soma = a + b
+            var media = (a + b) / 2
+            return media
+        }
+    </script>
+</body>
+</html>

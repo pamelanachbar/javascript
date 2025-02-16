@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Objetos</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+    <script>
+        var pessoa = {
+            //propriedade : valor
+            nome : 'Ana',
+            idade : 12,
+            peso  : 40,
+            altura: 50,
+            doador: false,
+        }
+
+        var produtos = {
+            descricao : "", //poderia usar [], indica que a descricao é uma propriedade de array, mas usei na forma de string
+            preco : []
+        }
+
+        const carros = {
+            marca : ['Ford', 'Fiat', 'GM'],
+            modelo : ['Ka', 'Uno', 'Corsa'],
+            ano : [1999, 2005, 2010],
+        }
+
+        /*
+        Para acessar os valores de cada propriedade 
+        pessoa.nome ou pessoa['nome']
+        */
+
+        /*
+        Operação IMC = peso / (altura * altura)
+        var imc = pessoa.peso / (pessoa.altura * pessoa.altura)
+        */
+
+        var imc = pessoa.peso / (pessoa.altura * pessoa.altura)
+
+        /*
+        .toFixed()
+        Limita o número de casas decimais
+        console.log('IMC' + imc.toFixed(2))
+        */
+        console.log('IMC = ' + imc.toFixed(2))
+
+        pessoa.nome = 'Ana Maia'
+        produtos.descricao = ['Arroz']
+        produtos.preco = [5.00]
+
+        /*
+        Sprend operator serve para não sobreescrever o contaúdo da variável 
+        */
+        produtos.descricao = [...produtos.descricao, 'Feijão', 'Trigo']
+        produtos.preco = [...produtos.preco, 9.99]
+
+        carros.marca = [...carros.marca, 'WV']
+        carros.modelo = [...carros.modelo, 'Fusca']
+        carros.ano = [...carros.ano, '1979']
+
+    </script>
+</body>
+</html>

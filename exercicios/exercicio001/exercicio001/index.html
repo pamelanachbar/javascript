@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analisador de Números</title>
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgba(71, 61, 139, 0.607);
+            font-size: 1.2em;
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+        }
+        main{
+            width: 200px;
+            height: 320px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            display: block;
+            margin: auto;
+        }
+
+        input{
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        select{
+            margin-bottom: 20px;
+            width: 200px;
+        }
+        footer{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisador de Números</h1>
+
+    <main id="formato">
+        <form action="" method="get">
+            <div>
+                <label for="inumeros">Números (entre 0 a 100)</label>
+                <input type="number" name="numeros" id="inumeros">
+                <input type="button" value="Adicionar" onclick="add()">
+            </div>
+
+            <div>
+                <select name="lista" id="ilista" size="10"></select> <br>
+                <input type="button" value="Finalizar" onclick="finaliza()">
+            </div>
+
+            <div id="div1"></div>
+            <div id="div2"></div>
+            <div id="div3"></div>
+            <div id="div4"></div>
+            <div id="div5"></div>
+        </form>
+    </main>
+
+    <footer><p>@nachbar</p></footer>
+
+    <script>
+              var contador = 0
+             var  maiorNumero = 0
+              var menorNumero = 999999
+              var soma = 0
+              var media = 0
+              var n = document.getElementById('inumeros')
+        function add(){
+         
+            var elemento = Number(n.value)
+            var l = document.getElementById('ilista')
+
+            /*
+            não usar a propriedade length para numeros. 
+            */
+           //l.innerHTML = ''
+            if(n.value.length == 0){
+                alert('[Erro]')
+            }
+            else{
+                if(elemento < 1 || elemento > 100){
+                    alert('Erro!')
+                }
+                else{
+                    var item = document.createElement('option')
+                    item.text = `Valor ${elemento} adicionado`
+                    l.appendChild(item)
+                    contador++
+                    soma += elemento
+                    if(elemento > maiorNumero){
+                        maiorNumero = elemento
+                    }
+                    else{
+                        if(elemento < menorNumero)
+                        menorNumero = elemento
+                    }
+                }
+            }
+            media = soma / contador
+            n.value = ''
+            n.focus()
+            
+        }
+
+        function finaliza(){
+
+            if(n.value.length == 0){
+                alert('Erro!')
+            }
+            else{
+                var resultado1 = document.getElementById('div1')
+            var resultado2 = document.getElementById('div2')
+            var resultado3 = document.getElementById('div3')
+            var resultado4 = document.getElementById('div4')
+            var resultado5 = document.getElementById('div5')
+
+            var expansao = document.getElementById('formato')
+
+            expansao.style.height = '550px'
+            resultado1.innerHTML = `Ao todo, tem-se ${contador} números cadastrados`
+            resultado2.innerHTML = `O maior número é o ${maiorNumero}`
+            resultado3.innerHTML = `O menor número é o ${menorNumero}`
+            resultado4.innerHTML = `A soma de todos os números é ${soma}`
+            resultado5.innerHTML = `A média dos valores é ${media}`
+            }
+
+        }
+    </script>
+</body>
+</html>

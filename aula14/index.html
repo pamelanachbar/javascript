@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rpetições em JavaScript</title>
+<style type="text/css">
+    *{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    body{
+        background-color: rgb(187, 190, 190);
+    }
+    div{
+        
+    }
+    form{
+        background-color: white;
+        width: 200px;
+        height: 150px;
+        margin: auto;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.336);
+    }
+    input{
+        margin-bottom: 15px;
+        background-color: rgb(255, 255, 255);
+    }
+    footer{
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+    <h1>Vamos Contar!</h1>
+    <div>
+        <form>
+            <label for="iinicio">Início</label>
+            <input type="number" id="iinicio">
+            <br>
+            <label for="ifim">Fim</label>
+            <input type="number" id="ifim">
+            <br>
+            <label for="ipasso">Passo</label>
+            <input type="number" id="ipasso">
+            <br>
+            <input type="button" value="Enviar" onclick="calcular()">
+        </form>
+    </div>
+    <div id="resultado"></div>
+    <footer>@ Pamela e Joel</footer>
+
+    <script>
+        function calcular(){
+            
+            var inicio = document.querySelectorAll('input') [0]
+            var fim = document.querySelectorAll('input') [1]
+            var passo = document.querySelectorAll('input') [2]
+
+            var res = document.getElementById('resultado')
+           for( var i = inicio.value; i <= fim.value; i+= passo.value) {
+            res.innerHTML(`${inicio}`)
+            
+        
+
+           }
+
+        }
+    </script>
+</body>
+</html>

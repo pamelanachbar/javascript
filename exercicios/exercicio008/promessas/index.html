@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        *{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+    <h1>Promises</h1>
+    <form method="get">
+        <label for="inome">Nome: </label>
+        <input type="text" name="nome" id="inome">
+        <label for="iidade">Idade:</label>
+        <input type="number" name="idade" id="iidade">
+
+        <input type="button" value="Enviar" onclick="enviar()">
+    </form>
+
+    <script>
+        function enviar(){
+            // Obtendo os valores dos campos de nome e idade
+            var n = document.getElementById('inome').value;
+            var i = document.getElementById('iidade').value;
+
+            // Verificando se os campos estão vazios
+            if(n.length == 0 || i.length == 0){
+                alert(`Erro! Todos os campos devem ser preenchidos.`);
+                return; // Para a execução caso algum campo esteja vazio
+            }
+
+            // Criando a Promise
+            var minhaPromessa = new Promise(function(resolve, reject){
+                if(n === 'Pamela'){
+                    resolve('Usuário ENCONTRADO!');
+                } else {
+                    reject('Erro! Usuário não encontrado');
+                }
+            });
+
+            // Consumindo a Promise
+            minhaPromessa.then(function(data){
+                console.log(data);  // Exibe "Usuário ENCONTRADO!" caso seja resolvido
+            }).catch(function(error){
+                console.log(error);  // Exibe "Erro! Usuário não encontrado" caso seja rejeitado
+            });
+        }
+    </script>
+
+</body>
+</html>

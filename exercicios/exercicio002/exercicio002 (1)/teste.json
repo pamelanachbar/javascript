@@ -1,0 +1,25 @@
+[{
+    "nome" : "Pamela",
+    "idade" : 16,
+    "trabalhando" : "true",
+    "detalhes_profissao" : {
+        "profissao": "Programador",
+        "empresa" : "emflex"
+
+    },
+    "hobbies" : [1, "nadar", true]
+},
+{
+    "nome" : "Pamela",
+    "idade" : 16,
+    "trabalhando" : "true",
+    "detalhes_profissao" : {
+        "profissao": "Programador",
+        "empresa" : "emflex"
+
+    },
+    "hobbies" : [1, "nadar", true]
+}]
+
+
+ 

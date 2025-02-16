@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio do CHATGPT</title>
+</head>
+<body>
+    <h1>Exercícios de JSON</h1>
+
+
+<script>
+    var pessoa = {
+        nome : 'Pamela',
+        idade : 17,
+        profissao: 'Programador',
+    }
+
+  
+    var jsonData = JSON.stringify(pessoa)
+    console.log(jsonData)
+
+    var objData = JSON.parse(jsonData)
+    console.log(objData)
+
+
+    var pessoa2 = {
+    "nome": "Ana",
+    "idade": 22,
+    "curso": "Sistemas de Informação",
+    "disciplinas": ["Matemática", "Algoritmos", "Banco de Dados"]
+  }
+
+  var jsonData2 = JSON.parse(pessoa2)
+  console.log(jsonData2)
+
+  var pessoa3 = {
+  nome: "Lucas",
+  idade: 25,
+  cidade: "Belo Horizonte"
+};
+pessoa3.cidade = "Limeira"
+var jsonData3 = JSON.stringify(pessoa3)
+
+console.log(jsonData3)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: lightslategrey;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        main{
+            width: 400px;
+            height: 300px;
+           background-color: white;
+           display: block;
+           margin: auto;
+           border-radius: 20px;
+           border: 1px solid black;
+           padding: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            border-radius: 7px;
+            margin-top: 6px;
+        }
+    
+    </style>
+    <title>Analisador de números</title>
+</head>
+<body>
+    <h1>Analisador de Números</h1>
+    <main>
+        <form method="get">
+            <label for="inumero">Digite um número de 1 a 100: </label>
+            <input type="number"  id="inumero"> 
+            <input type="button" value="Adicionar" onclick="adicao()"> <br>
+            <input type="button" value="Finalizar">  <br>
+            <select  id="ilista" size="10"></select>
+        </form>
+    </main>
+
+    <script>
+        function adicao(){
+
+            
+            var elemento = document.getElementById('inumero') 
+            var lista = document.getElementById('ilista')
+            var contador = 0
+            var maiorElemento = 0
+            var menorElemento = 99999999999999999999
+            var soma = 0
+
+            if(elemento.value.length == 0){
+                alert('Erro! Digite um número')
+            }
+            else if(elemento.value < 0 || elemento.value > 100){
+                alert('Erro! Coloque númmero entre 0 e 100')
+            }
+            else{
+            elem = Number(elemento.value)
+            var item = document.createElement('option')
+            item.text = 'Valor adicionado: ' + elem
+            lista.appendChild(item)
+            contador++
+            soma += elem
+            if(elem > maiorElemento)
+                maiorElemento = elem
+            }
+            if(elem < menorElemento){
+                menorElemento = elem
+            }
+             var media = soma / elem.length
+
+             document.write(``)
+
+        }
+    </script>
+</body>
+</html>

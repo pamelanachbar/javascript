@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    <h1>JavaScript Object Notation</h1>
+
+    <!--
+    Json é uma forma de escrer objetos (converter em texto) mas que pode ser interpretada por outras linguagens
+    Utilizado o forma de chave e valor, é leve e simples para requisições, utilizado muito em API's e arquivos
+
+    Tipos de Dados aceitos no JSON
+    - Strings - "Olá, mundo!" - deve-se colocar aspas duplas entre strings
+    - Números = 1 ou 12.5 - Não precisa de aspas para colocar números
+    - Arrays[1,2,3] - entre colchetes, pode-se colocar qualquer tipo de dado
+    - Objetos{"nome": "Matheus"} - Pode-se colocar um objeto dentro do objeto JSON, colocando aspas duplas na propriedade e no valor
+    - Dados nulos - null, chaves existentes mas com retorno nulo 
+
+    Para criar o documento, coloque como extensão .json
+    Para a inicialização do json, criamos chaves, que será o objeto javaScript
+    Colocar aspas duplas entre o nome da propriedade e o valor - "nome" : "Pamela"
+    Em cada linha, separar por virgulas, porém a última não deve ter 
+    Em arrays, pode-se colocar qualquer valor, sendo que em strings, colocar aspas duplas
+    Pode-se colocar também um array de objetos, [{}], separando os objetos por virgulas
+    -->
+
+    <script>
+        var objetos = [{
+            nome : 'Pamela',
+            idade : 16,
+            trabalhando : true,
+            detalhes_profissao : {
+                profissao: 'Programador',
+                empresa : 'emflex'
+        
+            },
+            hobbies : [1, "nadar", true]
+        },
+        {
+            nome : 'Pamela',
+            idade : 16,
+            trabalhando : false,
+            detalhes_profissao : {
+                profissao: null,
+                empresa : "emflex"
+        
+            },
+            hobbies : [1, "nadar", true]
+        }
+        
+        ]
+        
+        console.log(objetos)
+        
+        //Converter objetos para JSON.
+        /* o Método stringify é usado para converter objetos e arrays de objetos em texto e assegurar que seja em JSON VÁLIDO
+        */
+        var jsonData = JSON.stringify(objetos)
+        console.log(typeof jsonData)
+        console.log(jsonData)
+
+        
+        /*
+        Converte para JSON mesmo sendo do tipo string
+        [{"nome":"Pamela","idade":16,"trabalhando":true,"detalhes_profissao":{"profissao":"Programador","empresa":"emflex"},"hobbies":[1,"nadar",true]},{"nome":"Pamela","idade":16,"trabalhando":false,"detalhes_profissao":{"profissao":null,"empresa":"emflex"},"hobbies":[1,"nadar",true]}]
+        */
+
+        //Converter JSON para objetos
+        var objData = JSON.parse(jsonData)
+        console.log(objData)
+        console.log(typeof objData)
+
+        /*objData.map(pessoa) => {
+            console.log(pessoa.nome)
+        }*/
+       
+    </script>
+</body>
+</html>
