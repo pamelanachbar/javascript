@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo de JavaScript </title>
+
+    <form method="post" autocomplete="on">
+        <label for="inome">Nome: </label>
+        <input type="text" name="nome" id="inome" placeholder="nome" autocomplete="name" required maxlength=""> <br>
+
+        <label for="iidade">Idade:</label>
+        <input type="number" name="idade" id="iidade"> <br>
+
+        
+         <input type="radio" name="sexo" id="imasculino"> <label for="imasculino">Masculino</label> 
+         <input type="radio" name="sexo" id="ifeminino"> <label for="ifeminino">Feminino</label> <br>
+
+         <label for="isenha">Senhas: </label>
+         <input type="password" name="senha" id="isenha">
+         
+        <input type="button" value="Enviar" onclick="e()">
+        <input type="reset" value="Limpar">
+    </form>
+</head>
+<body>
+    <script>
+        function e(){
+            var n = document.getElementsByName('nome') [0]
+            var i = document.getElementsByTagName('input') [1]
+
+            if(i.value.length == 0){
+                alert(`Campo vazio!`)
+            }
+
+        }
+    </script>
+</body>
+</html>
+
+
