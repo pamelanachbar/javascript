@@ -242,8 +242,8 @@
     function visCardapio(){
         var corpo = document.createElement('div')
         corpo.style.width = '600px'
-        corpo.style.height = '500px'
-        corpo.style.backgroundColor = 'lightblue'
+        corpo.style.height = '600px'
+        corpo.style.backgroundColor = 'darkred'
         corpo.style.borderRadius = '30px'
         document.body.appendChild(corpo)
 
@@ -251,11 +251,12 @@
         titulo.style.fontFamily = 'Courier'
         titulo.innerHTML = 'Cardápio'
         titulo.style.textAlign = 'center'
+        titulo.style.color = 'white'
         corpo.appendChild(titulo)
 
         var main = document.createElement('div')
         main.style.width = '400px'
-        main.style.height = '400px'
+        main.style.height = '500px'
         main.style.backgroundColor = 'white'
         main.style.display = 'block'
         main.style.margin = 'auto'
@@ -294,6 +295,56 @@
          botao5.textContent = 'Adicionar'
          botao5.style.fontFamily = 'Courier'
          main.appendChild(botao5)
+
+
+         titulo2 = document.createElement('h2')
+         titulo2.textContent = 'Carrinho'
+         main.appendChild(titulo2)
+
+         var divCarrinho = document.createElement('div')
+         divCarrinho.style.width = '380px'
+         divCarrinho.style.height = '280px'
+         divCarrinho.style.backgroundColor = 'lightgray'
+         divCarrinho.style.borderRadius = '20px'
+         divCarrinho.style.color = 'black'
+         main.appendChild(divCarrinho)
+
+         divCarrinho.textContent += 'Carrinho Vazio!'
+         divCarrinho.style.padding = '7px'
+
+
+         var select = document.createElement('select')
+         select.size = 15
+         divCarrinho.appendChild(select)
+
+         var option1 = document.createElement('option')
+         option1.textContent = '--------------Itens adicionados-------------'
+         option1.style.fontFamily = 'Courier'
+         select.appendChild(option1)
+
+         botao1.addEventListener('click', function(){
+            var item = document.createElement('option')
+            item.textContent = `lanche(s) adicionado(s)! ---- R$}`
+            select.appendChild(item)
+         })
+
+         botao2.addEventListener('click', function(){
+            alert('f')
+         })
+
+         botao3.addEventListener('click', function(){
+            alert('AAAAAAAAAAAA')
+         })
+
+         botao4.addEventListener('click', function(){
+
+         })
+
+         botao5.addEventListener('click', function(){
+
+         })
+         
+
 
     }
    </script>
