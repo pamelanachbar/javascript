@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="corpo">
+        <h1>Digite as informações a seguir</h1>
+        <form method="post" autocomplete="on">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label for="inome">Nome: </label>
+                <input type="text" name="nome" id="inome" placeholder="nome" autocomplete="name" required minlength="2" maxlength="30"> <br>
+                <label for="iidade">Idade:</label>
+                <input type="number" name="idade" id="iidade"  minlength="1" maxlength="3" min="0" max="120" size="3"> <br>
+                <label for="iemail">Email: </label> 
+                <input type="email" name="email" id="iemail"> <br>
+                <label for="itelefone">Telefone: </label>
+                <input type="tel" name="telefone" id="itelefone" autocomplete="tel" placeholder="(xx) xxxx-xxxxx" pattern="[0-9]{4,5}-[0-9]{4}$"> <br>
+                <section>
+                    <label for="iestado">Estado: </label>
+                    <select name="estado" id="iestado">
+                        <option value="" selected>Escolha</option>
+                        <optgroup label="Região Sudeste">
+                            <option value="SP">São Paulo</option>
+                            <option value="MG">Minas Gerais</option>
+                        </optgroup>
+                        <optgroup label="Região Sul">
+                            <option value="PR">Paraná</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </optgroup>
+                    </select>
+                </section>
+                <label for="iprof">Profissão: </label>
+                <input type="text" name="prof" id="iprof" list="profissoes">
+                <datalist id="profissoes">
+                    <option>Confeteiro(a)</option>
+                    <option>Admistrador</option>
+                    <option>Bancário</option>
+                </datalist> <br>
+                <label >Selecione: </label> <br>
+                 <input type="radio" name="sexo" id="imasculino" checked> <label for="imasculino" >Masculino</label>
+                 <input type="radio" name="sexo" id="ifeminino"> <label for="ifeminino">Feminino</label> <br>
+                 <label for="isenha">Senhas: </label>
+                 <input type="password" name="senha" id="isenha">
+            </fieldset>
+        
+            <section>
+                <label for="imen">Deixe uma mensagem para a equipe: </label> <br>
+                <textarea name="mens" id="imens" cols="20" rows="5" placeholder="Sua mensagem..." style="resize: none;"></textarea>
+            </section>
+            <fieldset>
+                <legend>Preferêcias</legend>
+                <label for="icomida">Comida - Escolha pelo menos uma</label> <br>
+                <input type="checkbox" name="brigadeiro" id="ibrigadeiro"> <label for="ibrigadeiro">Brigadeiro</label> <br>
+                <input type="checkbox" name="bolo" id="ibolo"> <label for="ibolo">Bolo</label> <br>
+                <input type="checkbox" name="pudim" id="ipudim"> <label for="ipudim">Pudim</label> <br>
+                <input type="checkbox" name="sorvete" id="isorvete"> <label for="isorvete">Sorvete</label> <br>
+                <label for="aula">O quanto você gostou da aula - (0 a 10)</label>
+                <input type="range" name="aula" id="iaula" min="0" max="10" step="1" value="1"> <br>
+                <label for="ifoto">Envie uma foto do evento: </label> <br>
+                <input type="file" name="foto" id="ifoto">
+            </fieldset>
+                <fieldset>
+                    <legend>Informações Extras</legend>
+                    <label for="isatisfacao">Nota de satisfação: (0 a 10)</label>
+                    <input type="number" name="satisfacao" id="isatisfacao" minlength="1" maxlength="2" min="0" max="10"><br>
+                    <label for="iperiodo">Período da Atividade: </label>
+                    <input type="month" name="periodo" id="iperido" value="2025-03"> <br>
+                    <label for="idata">Data de Inicio: </label>
+                    <input type="date" name="data" id="idata" value="2025-03-03"> <br>
+                    <label for="ihorario">Horario marcado:</label>
+                    <input type="time" name="horario" id="ihorario"> <br>
+                </fieldset>
+            <input type="submit" value="Enviar" onclick="e()" id="enviar">
+            <input type="reset" value="Limpar" id="limpar">
+        </form>
+    </main>
+
+    <script>
+            var c = document.getElementById('corpo')
+            c.style.fontFamily = 'Verdana'
+            c.style.width = '700px'
+            
+            var color = document.getElementsByTagName('body') [0]
+            color.style.backgroundColor = 'lightblue'
+
+            var titulo = document.getElementsByTagName('h1') [0]
+            titulo.style.textAlign = 'center'
+
+            var form = document.getElementsByTagName('form') [0]
+            form.style.backgroundColor = 'white'
+            form.style.padding = '30px'
+            form.style.borderRadius = '30px'
+
+            var env = document.getElementById('enviar')
+            env.style.padding = '10px'
+            env.style.color = 'white'
+            env.style.backgroundColor = 'darkblue'
+            env.style.borderRadius = '10px'
+
+            var limp = document.getElementById('limpar')
+            limp.style.padding = '10px'
+            limp.style.color = 'white'
+            limp.style.backgroundColor = 'darkblue'
+            limp.style.borderRadius = '10px'
+            
+          function e(){
+           
+            var n = document.getElementsByName('nome') [0]
+            var i = document.getElementsByTagName('input') [1]
+
+            if(i.value.length == 0){
+                alert(`Insira uma idade! `)
+            }
+
+           
+        }
+    </script>
+</body>
+</html>
