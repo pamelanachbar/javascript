@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+   <main>
+    <section id="cardapio">
+        <div onclick="visCardapio()" style="width: 100px; border: 2px solid black; background-color: cornflowerblue; padding: 10px; font-family: 'Courier New', Courier, monospace; cursor: pointer;">Visualizar</div>
+    </section>
+   </main>
+
+   <script>
+    function visCardapio() {
+        var corpo = document.createElement('div');
+        corpo.style.width = '600px';
+        corpo.style.height = '600px';
+        corpo.style.backgroundColor = 'darkred';
+        corpo.style.borderRadius = '30px';
+        document.body.appendChild(corpo);
+
+        var titulo = document.createElement('h1');
+        titulo.style.fontFamily = 'Courier';
+        titulo.innerHTML = 'Cardápio';
+        titulo.style.textAlign = 'center';
+        titulo.style.color = 'white';
+        corpo.appendChild(titulo);
+
+        var main = document.createElement('div');
+        main.style.width = '400px';
+        main.style.height = '500px';
+        main.style.backgroundColor = 'white';
+        main.style.display = 'block';
+        main.style.margin = 'auto';
+        main.style.borderRadius = '20px';
+        main.style.fontFamily = 'Courier';
+        main.style.padding = '10px';
+        corpo.appendChild(main);
+
+        // Criando os itens de menu
+        var itens = [
+            { nome: 'Lanche', preco: 20 },
+            { nome: 'Cachorro-quente', preco: 18 },
+            { nome: 'Açaí', preco: 25 },
+            { nome: 'Pizza', preco: 50 },
+            { nome: 'Sushi', preco: 30 }
+        ];
+
+        // Adicionando os itens e botões
+        itens.forEach(function (item) {
+            var itemTexto = document.createElement('p');
+            itemTexto.textContent = `${item.nome} ------------ R$${item.preco}`;
+            main.appendChild(itemTexto);
+
+            var botao = document.createElement('button');
+            botao.textContent = 'Adicionar';
+            botao.style.fontFamily = 'Courier';
+            main.appendChild(botao);
+
+            botao.addEventListener('click', function () {
+                var itemCarrinho = document.createElement('option');
+                itemCarrinho.textContent = `${item.nome} - R$${item.preco}`;
+                select.appendChild(itemCarrinho);
+            });
+        });
+
+        // Título do carrinho
+        var titulo2 = document.createElement('h2');
+        titulo2.textContent = 'Carrinho';
+        main.appendChild(titulo2);
+
+        var divCarrinho = document.createElement('div');
+        divCarrinho.style.width = '380px';
+        divCarrinho.style.height = '280px';
+        divCarrinho.style.backgroundColor = 'lightgray';
+        divCarrinho.style.borderRadius = '20px';
+        divCarrinho.style.color = 'black';
+        main.appendChild(divCarrinho);
+
+        divCarrinho.innerHTML += 'Carrinho Vazio!<br>';
+        divCarrinho.style.padding = '7px';
+
+        var select = document.createElement('select');
+        select.size = 15;
+        divCarrinho.appendChild(select);
+
+        
+        var option1 = document.createElement('option');
+        option1.textContent = '--------------Itens adicionados-------------';
+        option1.style.fontFamily = 'Courier';
+        select.appendChild(option1);
+    }
+   </script>
+</body>
+</html>

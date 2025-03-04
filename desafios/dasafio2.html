@@ -266,7 +266,7 @@
          corpo.appendChild(main)
 
          main.innerHTML += '<br><br>Lanche ------------ R$20.00 '
-         botao1 = document.createElement('button')
+         var botao1 = document.createElement('button')
          botao1.textContent = 'Adicionar'
          botao1.style.fontFamily = 'Courier'
          main.appendChild(botao1)
@@ -322,11 +322,13 @@
          option1.style.fontFamily = 'Courier'
          select.appendChild(option1)
 
+
          botao1.addEventListener('click', function(){
             var item = document.createElement('option')
-            item.textContent = `lanche(s) adicionado(s)! ---- R$}`
+            item.innerHTML = `lanche(s) adicionado(s)! ---- R$`
             select.appendChild(item)
-         })
+         });
+
 
          botao2.addEventListener('click', function(){
             alert('f')
